@@ -189,4 +189,4 @@ function getFnFromType(type) {
 
 * **removeClientProperties**(< _array_ >propertyNames, < _function_ >callback) - _(void)_ - Removes specified properties from this client's server-side properties. `callback` has 1 parameter: < _Error_ >err.
 
-* **subscribe**(< _mixed_ >events, < _function_ >callback) - _(void)_ - Sets the event subscription for events emitted by the server. `events` can either be a _string_ or _array_ of strings of one of: `'none'`, `'all'`, `'sink'`, `'source'`, `'sinkInput'`, `'sourceOutput'`, `'module'`, `'client'`, `'sampleCache'`, `'global'`, or `'card'`. `callback` has 1 parameter: < _Error_ >err.
+* **subscribe**(< _mixed_ >events, < _function_ >callback) - _(void)_ - Sets the event subscription for events emitted by the server. `events` can either be a _string_ or _array_ of strings containing one or more of: `'none'`, `'all'`, `'sink'`, `'source'`, `'sinkInput'`, `'sourceOutput'`, `'module'`, `'client'`, `'sampleCache'`, `'global'`, or `'card'`. `callback` has 1 parameter: < _Error_ >err.
