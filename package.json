@@ -1,5 +1,5 @@
 { "name": "paclient",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Brian White <mscdex@mscdex.net>",
   "description": "PulseAudio client written in pure JavaScript for node.js",
   "main": "./lib/client",
