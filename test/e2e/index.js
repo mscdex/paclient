@@ -49,8 +49,7 @@ test.serial('moveSourceOutput (index, name)', async t => {
   t.pass();
 });
 
-// eslint-disable-next-line ava/no-skip-test
-test.serial.skip('setSinkPort (name, name)', async t => {
+test.serial('setSinkPort (name, name)', async t => {
   const { pa, connect } = t.context;
   await connect();
   const sinks = await pify(pa).getSinks();
