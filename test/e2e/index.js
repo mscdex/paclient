@@ -5,6 +5,8 @@ import pify from 'pify';
 
 import PAClient from '../../';
 
+const indexComparator = (a, b) => a.index - b.index;
+
 test.beforeEach(t => {
   const pa = new PAClient();
   const connect = () => {
@@ -69,9 +71,9 @@ test.serial('loadModule + unloadModuleByIndex', async t => {
   const { pa, connect } = t.context;
   await connect();
 
-  const modulesBefore = await pify(pa).getModules();
+  const modulesBefore = (await pify(pa).getModules()).sort(indexComparator);
   await pify(pa).loadModule('module-null-sink', '');
-  const modulesAfter = await pify(pa).getModules();
+  const modulesAfter = (await pify(pa).getModules()).sort(indexComparator);
 
   t.is(modulesAfter.length, modulesBefore.length + 1);
 
@@ -81,9 +83,7 @@ test.serial('loadModule + unloadModuleByIndex', async t => {
 
   await pify(pa).unloadModuleByIndex(lastModule.index);
 
-  const modulesAfterKill = await pify(pa).getModules();
+  const modulesAfterKill = (await pify(pa).getModules()).sort(indexComparator);
 
   t.deepEqual(modulesAfterKill, modulesBefore);
-
-  t.pass();
 });
