@@ -175,6 +175,10 @@ function getFnFromType(type) {
 
 * **killSourceOutputByIndex**(< _integer_ >index, < _function_ >callback) - _(void)_ - Terminates a source output. `callback` has 1 parameter: < _Error_ >err.
 
+* **loadModule**(< _string_ >moduleName, < _string_ >argument, < _function_ >callback) - _(void)_ - Load a module. `callback` has 1 parameter: < _Error_ >err.
+
+* **unloadModuleByIndex**(< _integer_ >moduleIndex, < _function_ >callback) - _(void)_ - Unload a module. `callback` has 1 parameter: < _Error_ >err.
+
 * **moveSinkInput**(< _integer_ >index, < _mixed_ >destSink, < _function_ >callback) - _(void)_ - Moves a sink input to a different sink identified by either its index (_integer_) or its name (_string_). `callback` has 1 parameter: < _Error_ >err.
 
 * **moveSourceOutput**(< _integer_ >index, < _mixed_ >destSink, < _function_ >callback) - _(void)_ - Moves a source output to a different source identified by either its index (_integer_) or its name (_string_). `callback` has 1 parameter: < _Error_ >err.
